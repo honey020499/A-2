@@ -1,3 +1,5 @@
+let start;
+ 
 function moving(){
     left= Math.random()*400;
     right=Math.random()*300;
@@ -8,8 +10,8 @@ function moving(){
              document.getElementById("box").style.height=wh+"px";
               document.getElementById("box").style.display="block";
               document.getElementById("box").style.backgroundColor=getRandomColor();
-             
-       start=new Date().getTime();
+               start=new Date().getTime();
+   
 }
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -20,16 +22,14 @@ function getRandomColor() {
   return color;
 }
 
-
-
-moving();
-
+ moving();
+ 
 
 document.getElementById("box").onclick = function() {
     document.getElementById("box").style.display="none";
-     end= new Date().getTime();
-     time=(end-start)/1000;
-    alert(time);
+    var end= new Date().getTime();
+    var  time=(end-start)/1000 ;
+    alert(time + " sec");
     moving();
 
 }
